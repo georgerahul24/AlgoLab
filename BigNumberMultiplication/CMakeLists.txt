@@ -5,4 +5,5 @@ set(CMAKE_CXX_STANDARD 23)
 
 add_executable(BigNumberMultiplication main.cpp
         BigNumberMultiplicationN2.hpp
-        BigNumberMultiplicationN.hpp)
+        BigNumberMultiplicationN.hpp
+        BigNumberMultiplicationDivideAndConquer.cpp)

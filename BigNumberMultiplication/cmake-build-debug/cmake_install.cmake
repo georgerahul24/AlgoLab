@@ -1,4 +1,4 @@
-# Install script for directory: /Users/gr/Desktop/C/BigNumberMultiplication
+# Install script for directory: /Users/gr/Desktop/AlgoLab/BigNumberMultiplication
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -45,5 +45,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/Users/gr/Desktop/C/BigNumberMultiplication/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/Users/gr/Desktop/AlgoLab/BigNumberMultiplication/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")
