@@ -57,10 +57,10 @@ int *mergeNArrays(int n, int **arrays, int *arrSizes) {
     int *arrayIndexes{new int[n]{0, 0}};
     int current_min = INT32_MIN;
 
-    current_min = findMin(arrays, arrayIndexes, n) != INT32_MAX;
-    while (current_min) {
+    current_min = findMin(arrays, arrayIndexes, n);
+    while (current_min!=INT32_MAX) {
         finalArray[finalArrayIndex++] = current_min;
-        current_min = findMin(arrays, arrayIndexes, n) != INT32_MAX;
+        current_min = findMin(arrays, arrayIndexes, n);
     }
 
     return finalArray;

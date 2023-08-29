@@ -2,7 +2,7 @@
 	"artifacts" : 
 	[
 		{
-			"path" : "Assignment2_Q4"
+			"path" : "Max_SubArray"
 		}
 	],
 	"backtrace" : 1,
@@ -49,12 +49,11 @@
 			},
 			"sourceIndexes" : 
 			[
-				0,
-				1
+				0
 			]
 		}
 	],
-	"id" : "Assignment2_Q4::@6890427a1f51a3e7e1df",
+	"id" : "Max_SubArray::@6890427a1f51a3e7e1df",
 	"link" : 
 	{
 		"commandFragments" : 
@@ -70,8 +69,8 @@
 		],
 		"language" : "CXX"
 	},
-	"name" : "Assignment2_Q4",
-	"nameOnDisk" : "Assignment2_Q4",
+	"name" : "Max_SubArray",
+	"nameOnDisk" : "Max_SubArray",
 	"paths" : 
 	{
 		"build" : ".",
@@ -83,7 +82,13 @@
 			"name" : "Source Files",
 			"sourceIndexes" : 
 			[
-				0,
+				0
+			]
+		},
+		{
+			"name" : "Header Files",
+			"sourceIndexes" : 
+			[
 				1
 			]
 		}
@@ -98,9 +103,8 @@
 		},
 		{
 			"backtrace" : 1,
-			"compileGroupIndex" : 0,
-			"path" : "mergeArrays.cpp",
-			"sourceGroupIndex" : 0
+			"path" : "SubArrayDetails.hpp",
+			"sourceGroupIndex" : 1
 		}
 	],
 	"type" : "EXECUTABLE"

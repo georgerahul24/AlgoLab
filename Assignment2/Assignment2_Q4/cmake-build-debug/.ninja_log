@@ -1,0 +1,6 @@
+# ninja log v5
+7	55	1693241257780727491	build.ninja	db8b7bacb85b920d
+0	1952	1693241259737935476	CMakeFiles/Assignment2_Q4.dir/main.cpp.o	219d3c65dda1b2f8
+1953	2149	1693241259936944724	Assignment2_Q4	e0ad7eaaae901ac
+6	357	1693241472312296431	CMakeFiles/Assignment2_Q4.dir/main.cpp.o	219d3c65dda1b2f8
+357	392	1693241472349536983	Assignment2_Q4	e0ad7eaaae901ac
