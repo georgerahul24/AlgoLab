@@ -10,7 +10,9 @@ int main() {
     pa->print();
 
 
-    ONLogN o();
+    ONLogN o(pa);
+    o.CP(0, pa->size - 1);
+
 
     return 0;
 };

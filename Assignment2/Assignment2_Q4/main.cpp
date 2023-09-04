@@ -70,6 +70,8 @@ int *mergeNArrays(int n, int **arrays, int *arrSizes) {
 }
 
 
+
+
 int main() {
     const int NUMBER_OF_ARRAYS = 4;
     int arr0[] = {8, 100, 230, INT16_MAX};

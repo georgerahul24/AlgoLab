@@ -1,5 +1,5 @@
 #include "Point.hpp"
-
+#pragma once
 
 // C++ program for Merge Sort from Geeks for Geeksmhttps://www.geeksforgeeks.org/merge-sort/
 
@@ -12,7 +12,7 @@ void mergeOnX(Point array[], int const left, int const mid,
     int const subArrayTwo = right - mid;
 
     // Create temp arrays
-    auto *leftArray = new Point[subArrayOne],
+    Point *leftArray = new Point[subArrayOne],
             *rightArray = new Point[subArrayTwo];
 
     // Copy data to temp arrays leftArray[] and rightArray[]
