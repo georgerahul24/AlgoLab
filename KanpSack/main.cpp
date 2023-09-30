@@ -99,7 +99,7 @@ public:
         if (W < arr[i][0]) {
 
             std::promise<int> p1;
-            auto f = p.get_future();
+            auto f = p1.get_future();
             std::thread t(&KnapSack::calculateTopDownMultiThreaded, this, i - 1, W, std::move(p1));
             t.join();
             int i1 = f.get();
@@ -109,13 +109,13 @@ public:
         } else {
 
             std::promise<int> p1;
-            auto f1 = p.get_future();
+            auto f1 = p1.get_future();
             std::thread t1(&KnapSack::calculateTopDownMultiThreaded, this, i - 1, W, std::move(p1));
 
 
             std::promise<int> p2;
-            auto f2 = p.get_future();
-            std::thread t2(&KnapSack::calculateTopDownMultiThreaded, this, i - 1, W - arr[i][0], std::move(p1));
+            auto f2 = p2.get_future();
+            std::thread t2(&KnapSack::calculateTopDownMultiThreaded, this, i - 1, W - arr[i][0], std::move(p2));
 
             t1.join();
             t2.join();
@@ -158,7 +158,7 @@ int main() {
 
     k.calculateTopDownMultiThreaded(k.arr.n - 1, k.W, std::move(p));
 
-    cout << endl << "The max that can be added is " << f.get() << endl;
+    cout << "The max that can be added is " << f.get() << endl;
     stop = high_resolution_clock::now();
     cout << "The number of function calls is " << k.count << endl;
     duration = duration_cast<microseconds>(stop - start);
