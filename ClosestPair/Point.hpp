@@ -51,6 +51,10 @@ public:
         y = p.y;
     }
 
+    ostream &operator<<(ostream &os) {
+        return os << "(" << x << " , " << y << ") ";;
+    }
+
 
     void print() const {
         std::cout << "X: " << this->x << " Y: " << this->y << "\n";

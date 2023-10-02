@@ -51,7 +51,7 @@ build cmake_object_order_depends_target_ClosestPair: phony || CMakeFiles/Closest
 
 build CMakeFiles/ClosestPair.dir/main.cpp.o: CXX_COMPILER__ClosestPair_unscanned_Debug /Users/gr/Desktop/AlgoLab/ClosestPair/main.cpp || cmake_object_order_depends_target_ClosestPair
   DEP_FILE = CMakeFiles/ClosestPair.dir/main.cpp.o.d
-  FLAGS = -g -std=gnu++2b -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk -fcolor-diagnostics
+  FLAGS = -g -std=gnu++2b -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.0.sdk -fcolor-diagnostics
   OBJECT_DIR = CMakeFiles/ClosestPair.dir
   OBJECT_FILE_DIR = CMakeFiles/ClosestPair.dir
   TARGET_COMPILE_PDB = CMakeFiles/ClosestPair.dir/
@@ -66,7 +66,7 @@ build CMakeFiles/ClosestPair.dir/main.cpp.o: CXX_COMPILER__ClosestPair_unscanned
 # Link the executable ClosestPair
 
 build ClosestPair: CXX_EXECUTABLE_LINKER__ClosestPair_Debug CMakeFiles/ClosestPair.dir/main.cpp.o
-  FLAGS = -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk
+  FLAGS = -g -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.0.sdk
   OBJECT_DIR = CMakeFiles/ClosestPair.dir
   POST_BUILD = :
   PRE_LINK = :
