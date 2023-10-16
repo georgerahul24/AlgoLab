@@ -1,4 +1,8 @@
 #include <cstdio>
+#include <iostream>
+#include <fstream>
+#include <string>
+#include <sstream>
 
 using namespace std;
 
@@ -32,6 +36,15 @@ public:
 struct Vertex {
     int value = -1;
     int status = -1;
+
+    Vertex() {
+
+    }
+
+    Vertex(int value, int status) {
+        this->value = value;
+        this->status = status;
+    }
 };
 
 struct Edge {
@@ -47,17 +60,41 @@ public:
     NodeLinkedList<Vertex> *adjacencyList = nullptr;
 
     DirectedGraph() {
-        int n, m;
-        NodeLinkedList<Vertex> nodeLinkedList;
-        nodeLinkedList.add(new Vertex());
-        nodeLinkedList.add(new Vertex());
+        cout << "Enter the number of Vertices: ";
+        cin >> n;
 
-        auto curr = nodeLinkedList.linkedList;
+        cout << "Enter the number of Edges: ";
+        cin >> m;
+    }
 
-        while (curr->currentNode != nullptr) {
-            printf("%d->", curr->currentNode->value);
-            curr = curr->nextNode;
+    explicit DirectedGraph(const string &filename) {
+        std::ifstream f(filename);
+        string line;
+
+
+        std::getline(f, line);
+        std::istringstream iss(line);
+        iss >> this->n >> this->m;
+        adjacencyMatrix = new int *[n];
+
+        for (int i = 0; i < n; i++) {
+            adjacencyMatrix[i] = new int[m];
         }
+
+        cout << "Edges Detected: " << endl;
+        int tm=m;
+        while (tm--) {
+
+            std::getline(f, line);
+            std::istringstream iss(line);
+            int startnode, endnode;
+            iss >> startnode >> endnode;
+            cout << startnode << "->" << endnode << endl;
+
+            adjacencyMatrix[startnode][endnode]=1;
+
+        }
+        printAdjacencyMatrix();
 
 
     }
@@ -68,6 +105,25 @@ public:
 
     void createGraph(int n, int m) {
 
+    }
+
+    void printAdjacencyMatrix() {
+        printf("|  ");
+        for (int i = 0; i < n; i++) {
+            printf("%d_", i);
+        }
+
+        printf("\n");
+
+
+        for (int i = 0; i < n; i++) {
+            printf("%d| ", i);
+            for (int j = 0; j < n; j++) {
+                printf("%d ", adjacencyMatrix[i][j]);
+            }
+
+            printf("\n");
+        }
     }
 
 
