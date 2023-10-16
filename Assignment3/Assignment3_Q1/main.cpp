@@ -61,7 +61,7 @@ public:
             Max_Min *max1 = findMaxMin(start, middle);
             Max_Min *max2 = findMaxMin(middle + 1, end);
 
-            return new Max_Min{.max=max(max1->max, max2->max), .min=min(max1->max, max2->max)};
+            return new Max_Min{.max=max(max1->max, max2->max), .min=min(max1->max, max2->max)};//TODO: errorm in 2nd max
         }
 
 
