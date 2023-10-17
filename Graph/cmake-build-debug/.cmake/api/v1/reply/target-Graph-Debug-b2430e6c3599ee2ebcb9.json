@@ -89,7 +89,9 @@
 			"name" : "Header Files",
 			"sourceIndexes" : 
 			[
-				1
+				1,
+				2,
+				3
 			]
 		}
 	],
@@ -104,6 +106,16 @@
 		{
 			"backtrace" : 1,
 			"path" : "Graph.hpp",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 1,
+			"path" : "BFS.hpp",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 1,
+			"path" : "DFS.hpp",
 			"sourceGroupIndex" : 1
 		}
 	],
