@@ -1,11 +1,12 @@
 #include <iostream>
-#include "BFS.hpp"
-#include "DFS.hpp"
+
+#include "ConnectedGraph2.hpp"
 
 int main() {
-    BFS b("/Users/gr/Desktop/AlgoLab/Graph/Graph1.txt");
-    DFS d("/Users/gr/Desktop/AlgoLab/Graph/Graph1.txt");
 
-
+    bool connected;
+    ConnectedGraph2 t("/Users/gr/Desktop/AlgoLab/Graph/Graph1.txt", &connected);
+    printf("The graph is %s connected", connected ? "" : "not");
     return 0;
+
 }

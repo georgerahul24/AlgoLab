@@ -91,7 +91,10 @@
 			[
 				1,
 				2,
-				3
+				3,
+				4,
+				5,
+				6
 			]
 		}
 	],
@@ -116,6 +119,21 @@
 		{
 			"backtrace" : 1,
 			"path" : "DFS.hpp",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 1,
+			"path" : "TopologicalSorting.hpp",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 1,
+			"path" : "ConnectedGraph1.hpp",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 1,
+			"path" : "ConnectedGraph2.hpp",
 			"sourceGroupIndex" : 1
 		}
 	],

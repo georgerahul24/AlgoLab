@@ -3,6 +3,7 @@
 #include <fstream>
 #include <string>
 #include <sstream>
+
 #pragma once
 using namespace std;
 
@@ -37,8 +38,8 @@ struct Vertex {
     int value = -1;
     int color = -1;
     int d = INT32_MAX;
-    int f=0;
-    Vertex * pi= nullptr;
+    int f = 0;
+    Vertex *pi = nullptr;
 
     Vertex() {
 
@@ -70,6 +71,10 @@ public:
         cout << "Enter the number of Edges: ";
         cin >> m;
         createGraph(n, m);
+    }
+
+    explicit DirectedGraph(bool createEmpty) {
+
     }
 
     explicit DirectedGraph(const string &filename) {
@@ -138,7 +143,6 @@ public:
         }
 
 
-
     }
 
     void printAdjacencyMatrix() {
@@ -186,7 +190,33 @@ public:
 
 
         }
+
+
     }
 
 
+    static DirectedGraph *Inverse(DirectedGraph *G);
 };
+
+DirectedGraph *DirectedGraph::Inverse(DirectedGraph *argG) {
+    DirectedGraph *G = new DirectedGraph(true);
+    G->n = argG->n;
+    G->m = argG->m;
+    G->adjacencyMatrix = new int *[G->n];
+
+    G->vertices = argG->vertices;
+
+    for (int i = 0; i < G->n; i++) {
+        G->adjacencyMatrix[i] = new int[G->n];
+    }
+
+
+    for (int i = 0; i < argG->n; i++) {
+        for (int j = 0; j < argG->n; j++) {
+            G->adjacencyMatrix[i][j] = argG->adjacencyMatrix[j][i];
+        }
+
+    }
+    return G;
+}
+
