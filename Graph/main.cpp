@@ -1,12 +1,12 @@
 #include <iostream>
 
-#include "ConnectedGraph2.hpp"
+#include "Bipartite.hpp"
 
 int main() {
 
     bool connected;
-    ConnectedGraph2 t("/Users/gr/Desktop/AlgoLab/Graph/Graph1.txt", &connected);
-    printf("The graph is %s connected", connected ? "" : "not");
+    Bipartite t("/Users/gr/Desktop/AlgoLab/Graph/Graph1.txt", &connected);
+    printf("The graph is %s Bipartite", connected ? "" : "not");
     return 0;
 
 }

@@ -9,4 +9,5 @@ add_executable(Graph main.cpp
         DFS.hpp
         TopologicalSorting.hpp
         ConnectedGraph1.hpp
-        ConnectedGraph2.hpp)
+        ConnectedGraph2.hpp
+        Bipartite.hpp)
