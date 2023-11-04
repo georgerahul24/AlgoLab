@@ -10,4 +10,7 @@ add_executable(Graph main.cpp
         TopologicalSorting.hpp
         ConnectedGraph1.hpp
         ConnectedGraph2.hpp
-        Bipartite.hpp)
+        Bipartite.hpp
+        SCC.hpp
+        UndirectedGraphWithWeights.hpp
+        Prims.hpp)
