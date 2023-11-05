@@ -13,4 +13,6 @@ add_executable(Graph main.cpp
         Bipartite.hpp
         SCC.hpp
         UndirectedGraphWithWeights.hpp
-        Prims.hpp)
+        Prims.hpp
+        Kurskal'sWithLinkedLIst.hpp
+        DoublyLinkedList.hpp)
