@@ -5,29 +5,82 @@ using namespace std;
 
 class Prims {
 public:
-    vector<Edge *> *edges = new vector<Edge *>;
+
+
+    bool inList(Edge *edge, list<Vertex *> *vertices) {
+
+        for (auto vertex: *vertices) {
+            if (edge->u == vertex || edge->v == vertex) return true;
+        }
+        return false;
+
+    }
+
+    bool inList(Vertex *ver, list<Vertex *> *vertices) {
+
+        for (auto vertex: *vertices) {
+            if (ver== vertex) return true;
+        }
+        return false;
+
+    }
+
+    Edge *findMinEdge(list<Edge *> *edges, list<Vertex *> *verticesInS) {
+        int min = INT32_MAX;
+        Edge *minEdge = nullptr;
+
+        for (auto edge: *edges) {
+            if (edge->weight < min && inList(edge, verticesInS)) {
+                minEdge = edge;
+                min = edge->weight;
+            }
+        }
+        return minEdge;
+    }
+
+    void cut(list<Edge *> *SC, list<Vertex *> *verticesInS) {
+        auto it = SC->begin();
+
+
+        while (it != SC->end()) {
+
+            if (inList((*it)->u, verticesInS) && inList((*it)->v,verticesInS)){
+                it = SC->erase(it);
+            }
+            ++it;
+        }
+    }
+
 
     Prims(const string &filename) {
         UndirectedGraphWithWeights G(filename);
-        int i = 0;
         G.printAdjacencyMatrix();
-        while (G.vertices[i].color == 0) {
-            int minWeight = INT32_MAX, minIndex = 0;
-            for (int j = 0; j < G.n; j++) {
-                if (minWeight > G.adjacencyMatrix[i][j] && G.vertices[j].color == 0) {
-                    minWeight = G.adjacencyMatrix[i][j];
-                    minIndex = j;
-                }
-            }
-            G.vertices[i].color = 2;
-            if(minWeight==INT32_MAX) break;
-            edges->push_back(new Edge(&G.vertices[i], &G.vertices[minIndex], minWeight));
-            i = minIndex;
+        G.createEdges();
+        list<Edge *> SC; // S complement
+        for (Edge edge: G.edges) {
+            SC.push_back(new Edge(edge)); //Copying to SC
+        }
+        list<Edge *> S; // S
+        list<Vertex *> verticesInS;
+
+        int numberOfEdges = 0;
+        verticesInS.push_back(&G.vertices[0]);
+        while (numberOfEdges != G.n - 1 && !SC.empty()) {
+
+            Edge *minEdge = findMinEdge(&SC, &verticesInS);
+            S.push_back(minEdge);
+            verticesInS.push_back(minEdge->v);
+            verticesInS.push_back(minEdge->u);
+            cut(&SC, &verticesInS);
+            numberOfEdges++;
+
         }
 
-        for (auto edge: *edges) {
-            printf("%d -> %d (%d)\n", edge->u->value, edge->v->value, edge->weight);
+        for (auto edge: S) {
+            printf("%d -> %d (%d)\n", edge->v->value, edge->u->value, edge->weight);
+
         }
+
 
     }
 

@@ -208,7 +208,7 @@ public:
     }
 
     void createEdges() {
-        for (int i = 0; this->n; i++) {
+        for (int i = 0; i < this->n; i++) {
             for (int j = 0; j < this->n; j++) {
                 if (adjacencyMatrix[i][j] != INT32_MAX) {
                     edges.push_back(Edge(&vertices[i], &vertices[j], adjacencyMatrix[i][j]));
@@ -244,7 +244,6 @@ UndirectedGraphWithWeights *UndirectedGraphWithWeights::Inverse(UndirectedGraphW
         for (int j = 0; j < argG->n; j++) {
             G->adjacencyMatrix[i][j] = argG->adjacencyMatrix[j][i];
         }
-
     }
     return G;
 }
