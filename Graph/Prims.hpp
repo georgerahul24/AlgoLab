@@ -19,7 +19,7 @@ public:
     bool inList(Vertex *ver, list<Vertex *> *vertices) {
 
         for (auto vertex: *vertices) {
-            if (ver== vertex) return true;
+            if (ver == vertex) return true;
         }
         return false;
 
@@ -29,8 +29,12 @@ public:
         int min = INT32_MAX;
         Edge *minEdge = nullptr;
 
-        for (auto edge: *edges) {
-            if (edge->weight < min && inList(edge, verticesInS)) {
+        for (auto edge : *edges) {
+            if (inList(edge->u, verticesInS) && !inList(edge->v, verticesInS) && edge->weight < min) {
+                minEdge = edge;
+                min = edge->weight;
+            }
+            if (inList(edge->v, verticesInS) && !inList(edge->u, verticesInS) && edge->weight < min) {
                 minEdge = edge;
                 min = edge->weight;
             }
@@ -44,7 +48,7 @@ public:
 
         while (it != SC->end()) {
 
-            if (inList((*it)->u, verticesInS) && inList((*it)->v,verticesInS)){
+            if (inList((*it)->u, verticesInS) && inList((*it)->v, verticesInS)) {
                 it = SC->erase(it);
             }
             ++it;
@@ -65,8 +69,8 @@ public:
 
         int numberOfEdges = 0;
         verticesInS.push_back(&G.vertices[0]);
-        while (numberOfEdges != G.n - 1 && !SC.empty()) {
-
+        while (numberOfEdges < G.n - 1 && !SC.empty()) {
+            //printEdges(&SC);
             Edge *minEdge = findMinEdge(&SC, &verticesInS);
             S.push_back(minEdge);
             verticesInS.push_back(minEdge->v);
@@ -74,15 +78,18 @@ public:
             cut(&SC, &verticesInS);
             numberOfEdges++;
 
-        }
-
-        for (auto edge: S) {
-            printf("%d -> %d (%d)\n", edge->v->value, edge->u->value, edge->weight);
+           // printf("----------\n");
 
         }
-
+        printEdges(&S);
 
     }
 
+    void printEdges(list<Edge *> *S) {
 
+        for (auto edge: *S) {
+            printf("%d -> %d (%d)\n", edge->v->value, edge->u->value, edge->weight);
+
+        }
+    }
 };
