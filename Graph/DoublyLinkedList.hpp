@@ -126,8 +126,8 @@ public:
     }
 
     static void mergeAndChangeRepresentative(DoublyLinkedList *l1, DoublyLinkedList *l2) {
+        l2->tail->next= nullptr;
         l1->tail->next = l2->head;
-        l2->head->prev = l1->tail;
         l1->tail = l2->tail;
         Vertex* rep = l1->head->representative;
         Node *curr = l2->head;

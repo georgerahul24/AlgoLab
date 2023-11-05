@@ -3,7 +3,7 @@
 #include <fstream>
 #include <string>
 #include <sstream>
-#include "list"
+#include "vector"
 
 #pragma once
 using namespace std;
@@ -74,7 +74,7 @@ public:
     int **adjacencyMatrix = nullptr;
     NodeLinkedList<Vertex> *adjacencyList = nullptr;
     Vertex *vertices = nullptr;
-    list<Edge> edges;
+    vector<Edge> edges;
 
     UndirectedGraphWithWeights() {
         cout << "Enter the number of Vertices: ";

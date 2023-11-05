@@ -3,11 +3,12 @@
 
 using namespace std;
 
+//TODO: Write the order in prims
 class Prims {
 public:
 
 
-    bool inList(Edge *edge, list<Vertex *> *vertices) {
+    bool inList(Edge *edge, vector<Vertex *> *vertices) {
 
         for (auto vertex: *vertices) {
             if (edge->u == vertex || edge->v == vertex) return true;
@@ -16,7 +17,7 @@ public:
 
     }
 
-    bool inList(Vertex *ver, list<Vertex *> *vertices) {
+    bool inList(Vertex *ver, vector<Vertex *> *vertices) {
 
         for (auto vertex: *vertices) {
             if (ver == vertex) return true;
@@ -25,11 +26,11 @@ public:
 
     }
 
-    Edge *findMinEdge(list<Edge *> *edges, list<Vertex *> *verticesInS) {
+    Edge *findMinEdge(vector<Edge *> *edges, vector<Vertex *> *verticesInS) {
         int min = INT32_MAX;
         Edge *minEdge = nullptr;
 
-        for (auto edge : *edges) {
+        for (auto edge: *edges) {
             if (inList(edge->u, verticesInS) && !inList(edge->v, verticesInS) && edge->weight < min) {
                 minEdge = edge;
                 min = edge->weight;
@@ -42,7 +43,7 @@ public:
         return minEdge;
     }
 
-    void cut(list<Edge *> *SC, list<Vertex *> *verticesInS) {
+    void cut(vector<Edge *> *SC, vector<Vertex *> *verticesInS) {
         auto it = SC->begin();
 
 
@@ -60,12 +61,12 @@ public:
         UndirectedGraphWithWeights G(filename);
         G.printAdjacencyMatrix();
         G.createEdges();
-        list<Edge *> SC; // S complement
+        vector<Edge *> SC; // S complement
         for (Edge edge: G.edges) {
             SC.push_back(new Edge(edge)); //Copying to SC
         }
-        list<Edge *> S; // S
-        list<Vertex *> verticesInS;
+        vector<Edge *> S; // S
+        vector<Vertex *> verticesInS;
 
         int numberOfEdges = 0;
         verticesInS.push_back(&G.vertices[0]);
@@ -78,14 +79,14 @@ public:
             cut(&SC, &verticesInS);
             numberOfEdges++;
 
-           // printf("----------\n");
+            // printf("----------\n");
 
         }
         printEdges(&S);
 
     }
 
-    void printEdges(list<Edge *> *S) {
+    void printEdges(vector<Edge *> *S) {
 
         for (auto edge: *S) {
             printf("%d -> %d (%d)\n", edge->v->value, edge->u->value, edge->weight);
