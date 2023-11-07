@@ -15,4 +15,5 @@ add_executable(Graph main.cpp
         UndirectedGraphWithWeights.hpp
         Prims.hpp
         Kurskal'sWithLinkedLIst.hpp
-        DoublyLinkedList.hpp)
+        DoublyLinkedList.hpp
+        Kruska'swithUnionByRank.hpp)
