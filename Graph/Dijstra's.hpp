@@ -34,8 +34,7 @@ public:
         UndirectedGraphWithWeights G(filename);
         G.createEdges();
         G.createAdjacencyListFromMatrix();
-        G.printAdjacencyMatrix();
-        G.printAdjacencyList();
+
 
         vector<Vertex *> pq;
         set<Vertex *> notVisited;

@@ -4,7 +4,7 @@ project(Graph)
 set(CMAKE_CXX_STANDARD 23)
 
 add_executable(Graph main.cpp
-        Graph.hpp
+        DirectedGraphWithoutWeights.hpp
         BFS.hpp
         DFS.hpp
         TopologicalSorting.hpp
@@ -18,4 +18,6 @@ add_executable(Graph main.cpp
         DoublyLinkedList.hpp
         Kruska'swithUnionByRank.hpp
         Dijstra's.hpp
-        UndirectedGraphWithWeightsVer2.hpp)
+        UndirectedGraphWithWeightsVer2.hpp
+        DirectedGraphsWithWeight.hpp
+        BellmanFord.hpp)

@@ -1,7 +1,8 @@
-#include "Dijstra's.hpp"
+#include "BellmanFord.hpp"
+
 int main() {
 
-     Dijstra t("/Users/gr/Desktop/AlgoLab/Graph/Graph2.txt");
+    BellmanFord t("/Users/gr/Desktop/AlgoLab/Graph/Graph2.txt");
 
     return 0;
 }

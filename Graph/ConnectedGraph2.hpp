@@ -1,4 +1,4 @@
-#include "Graph.hpp"
+#include "DirectedGraphWithoutWeights.hpp"
 #include "vector"
 
 class ConnectedGraph2 {
