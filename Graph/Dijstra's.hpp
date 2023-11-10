@@ -47,23 +47,27 @@ public:
         }
 
         G.vertices[0].d = 0;
-        Vertex *parent = nullptr;
+        G.vertices[0].pi = &G.vertices[0];
 
         make_heap(pq.begin(), pq.end(), Comparator());
 
         while (!pq.empty()) {
             Vertex *ver = pq.at(0);
             for (adjacencyListEdge v: (G.adjacencyList->at(ver->value))) {
-                v.vertex->d = min(v.vertex->d, ver->d+v.weight);
+
+                if(v.vertex->d>ver->d + v.weight){
+                    v.vertex->d =ver->d + v.weight;
+                    v.vertex->pi = ver;
+                }
+
+
             }
 
-            printQueue(&pq);
             pq.erase(pq.begin());
             make_heap(pq.begin(), pq.end(), Comparator());
         }
-
         for (Vertex i: G.vertices) {
-            printf("%d : %d\n", i.value, i.d);
+            printf("%d : %d Parent -> %d\n", i.value, i.d,i.pi->value);
         }
 
 
