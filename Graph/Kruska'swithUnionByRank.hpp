@@ -75,9 +75,9 @@ public:
                 continue;
             } else {
                 //Different Representatives
-                if (ru->rank < rv->rank) {
+                if (ru->rank > rv->rank) {
                     rv->parent = ru->parent;
-                } else if (rv->rank < ru->rank) {
+                } else if (rv->rank > ru->rank) {
                     ru->parent = rv->parent;
                 } else {
                     ru->parent = rv->parent;

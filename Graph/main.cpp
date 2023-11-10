@@ -1,7 +1,7 @@
-#include "Kruska'swithUnionByRank.hpp"
+#include "Dijstra's.hpp"
 int main() {
 
-     Kruskal t("/Users/gr/Desktop/AlgoLab/Graph/Graph2.txt");
+     Dijstra t("/Users/gr/Desktop/AlgoLab/Graph/Graph2.txt");
 
     return 0;
 }

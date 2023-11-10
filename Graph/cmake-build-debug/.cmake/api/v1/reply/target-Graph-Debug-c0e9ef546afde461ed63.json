@@ -101,7 +101,9 @@
 				10,
 				11,
 				12,
-				13
+				13,
+				14,
+				15
 			]
 		}
 	],
@@ -176,6 +178,16 @@
 		{
 			"backtrace" : 1,
 			"path" : "Kruska'swithUnionByRank.hpp",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 1,
+			"path" : "Dijstra's.hpp",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 1,
+			"path" : "UndirectedGraphWithWeightsVer2.hpp",
 			"sourceGroupIndex" : 1
 		}
 	],
