@@ -2,7 +2,10 @@
 
 int main() {
 
-    BellmanFord t("/Users/gr/Desktop/AlgoLab/Graph/Graph2.txt");
+    bool negativeCycle;
+    BellmanFord t("/Users/gr/Desktop/AlgoLab/Graph/Graph3.txt",&negativeCycle);
+
+    printf("%s\n",negativeCycle?"There is a negative cycle":"There is no negative cycle");
 
     return 0;
 }
