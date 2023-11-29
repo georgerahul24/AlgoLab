@@ -1,6 +1,6 @@
 #include "DirectedGraphWithoutWeights.hpp"
 #include "queue"
-
+#pragma once
 using namespace std;
 
 class DFS {

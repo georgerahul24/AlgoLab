@@ -20,4 +20,10 @@ add_executable(Graph main.cpp
         Dijstra's.hpp
         UndirectedGraphWithWeightsVer2.hpp
         DirectedGraphsWithWeight.hpp
-        BellmanFord.hpp)
+        BellmanFord.hpp
+        FloydWarshall.hpp
+        StronglyConnectedGraph.hpp
+        DirectedGraphWithoutWeightsVer2.hpp
+        TypesOfEdges.hpp
+        PrimsWithMinHeap.hpp
+)

@@ -4,7 +4,6 @@
 #include <string>
 #include <sstream>
 #include "vector"
-
 #pragma once
 using namespace std;
 
@@ -69,11 +68,11 @@ public:
         createGraph(n, m);
     }
 
-    explicit DirectedGraphWithWeights(bool createEmpty) {
+    DirectedGraphWithWeights(bool createEmpty) {
 
     }
 
-    explicit DirectedGraphWithWeights(const string &filename) {
+    DirectedGraphWithWeights(const string &filename) {
         std::ifstream f(filename);
         string line;
 

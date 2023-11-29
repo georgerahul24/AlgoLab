@@ -20,8 +20,6 @@ public:
 
         *argConnected = connected;
 
-
-
     }
 
 
